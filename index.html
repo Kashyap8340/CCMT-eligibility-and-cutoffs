@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCMT 2026 Eligibility Checker | Bauhaus Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+    <div id="ambient-bg"></div>
+    <div class="container">
+        <header>
+            <div class="header-decor">
+                <div class="decor-shape decor-circle"></div>
+                <div class="decor-shape decor-triangle"></div>
+                <div class="decor-shape decor-square"></div>
+            </div>
+            <h1>
+                <span class="title-year">CCMT 2026</span>
+                <span class="title-main">Eligibility & Cutoffs</span>
+            </h1>
+            <p>Discover eligible M.Tech, M.Arch & M.Plan courses and instantly check their cutoffs.</p>
+        </header>
+
+        <main>
+            <div class="bauhaus-panel filters">
+                <div class="form-group">
+                    <label for="btech-degree">Your B.Tech Course</label>
+                    <input type="text" id="btech-degree" placeholder="e.g. Biomedical, Computer Science..." autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="gate-paper">GATE Paper</label>
+                    <select id="gate-paper">
+                        <option value="">-- Select GATE Paper --</option>
+                        <!-- Populated dynamically -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="college">College / Institute</label>
+                    <select id="college">
+                        <option value="ALL">All Colleges</option>
+                        <option value="GROUP_NIT">All NITs</option>
+                        <option value="GROUP_IIIT">All IIITs</option>
+                        <option value="GROUP_CFTI">All CFTIs</option>
+                        <!-- Populated dynamically -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option value="ALL">-- Select Category --</option>
+                        <option value="OPEN">OPEN</option>
+                        <option value="OPEN-PwD">OPEN-PwD</option>
+                        <option value="EWS">EWS</option>
+                        <option value="EWS-PwD">EWS-PwD</option>
+                        <option value="OBC-NCL">OBC-NCL</option>
+                        <option value="OBC-NCL-PwD">OBC-NCL-PwD</option>
+                        <option value="SC">SC</option>
+                        <option value="SC-PwD">SC-PwD</option>
+                        <option value="ST">ST</option>
+                        <option value="ST-PwD">ST-PwD</option>
+                    </select>
+                </div>
+
+                <button id="check-btn" class="primary-btn">Check Eligibility</button>
+            </div>
+
+            <section id="results-section" class="hidden">
+            <h2 id="results-title" class="bauhaus-title">Eligible Courses (0)</h2>
+            
+            <div id="results-toolbar" class="bauhaus-panel toolbar hidden">
+                <div class="form-group">
+                    <label for="result-search">Search Results</label>
+                    <input type="text" id="result-search" placeholder="Filter by course name..." autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="gate-score-filter">Your GATE Score</label>
+                    <input type="number" id="gate-score-filter" placeholder="e.g. 550" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="result-sort">Sort By</label>
+                    <select id="result-sort">
+                        <option value="alphabetical">Alphabetical</option>
+                        <option value="highest-max">Highest Max Cutoff</option>
+                        <option value="lowest-min">Lowest Min Cutoff</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="loading" class="loading-spinner hidden"></div>
+            <div class="grid" id="results-grid">
+                <!-- Cards will be injected here -->
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <script src="noise.min.js?v=1"></script>
+    <script src="util.js?v=1"></script>
+    <script src="coalesce.js?v=2"></script>
+    <script src="app.js?v=3"></script>
+</body>
+</html>
