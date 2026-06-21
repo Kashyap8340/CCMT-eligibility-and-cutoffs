@@ -193,7 +193,8 @@ input:focus, select:focus {
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.1s ease;
-    height: 52px;
+    min-height: 52px;
+    line-height: 1.2;
     font-family: 'Outfit', sans-serif;
     box-shadow: 6px 6px 0px 0px var(--black);
 }
